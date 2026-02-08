@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicky News - Portal Berita Eksklusif</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --primary: #38bdf8;
+            --text: #f8fafc;
+            --accent: #22c55e;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #111827;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .logo span { color: var(--primary); }
+        
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504711432869-efd5b7ffebb1?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            padding: 60px 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid #334155;
+        }
+        .premium-tag {
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .post-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+        .post-card h2 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .btn-read {
+            display: inline-block;
+            background: var(--primary);
+            color: #0f172a;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 14px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">DICKY <span>NEWS</span></div>
+</header>
+
+<div class="container">
+    <div class="hero">
+        <span class="premium-tag">Premium Access</span>
+        <h1>Update Informasi Terkini & Link Eksklusif</h1>
+        <p>Portal berita terpercaya untuk mendapatkan akses konten digital terbaru setiap hari.</p>
+    </div>
+
+    <div class="post-card">
+        <small style="color: var(--accent)">8 Februari 2026</small>
+        <h2>Dicky News: Transformasi Digital 2026</h2>
+        <p>Kami telah memindahkan seluruh layanan kami ke infrastruktur mandiri yang lebih cepat dan aman. Nikmati akses tanpa batas ke semua konten eksklusif kami melalui server GitHub yang kini jauh lebih stabil dan tanpa iklan yang mengganggu...</p>
+        <a href="#" class="btn-read">Baca Selengkapnya</a>
+    </div>
+
+    <div class="post-card">
+        <small style="color: var(--accent)">7 Februari 2026</small>
+        <h2>Cara Mendapatkan File Unlocker Terbaru</h2>
+        <p>Panduan lengkap bagi para pengguna setia Dicky News untuk melewati sistem pengamanan terbaru kami. Pastikan kamu sudah mengikuti semua langkah sosial media yang diminta agar link tujuan terbuka secara otomatis...</p>
+        <a href="#" class="btn-read">Lihat Panduan</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Dicky News Official. Hosted on GitHub Pages.
+</footer>
+
+</body>
+</html>
