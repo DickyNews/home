@@ -6,189 +6,150 @@
     <title>Dicky News Official | Gaming Portal</title>
     <style>
         :root {
-            --bg-color: #0b0b0d; /* Hitam pekat gaming */
-            --card-bg: #16161a; /* Abu gelap untuk kontras */
-            --accent-yellow: #ffcc00; /* Kuning cerah tapi tegas */
-            --text-main: #e0e0e0;
-            --text-dim: #94a3b8;
+            --bg: #0d0d0f;
+            --card: #16161a;
+            --yellow: #ffcc00;
+            --text: #e2e8f0;
         }
-
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
-            padding: 0;
-            line-height: 1.7;
+            line-height: 1.8;
         }
-
-        /* Efek Garis Kuning di Paling Atas */
-        .top-bar {
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--accent-yellow), transparent);
-        }
-
-        header {
-            padding: 30px;
-            text-align: center;
-            border-bottom: 1px solid #222;
-        }
-
-        .site-title {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .site-title span {
-            color: var(--accent-yellow);
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
-        }
-
+        /* Konten Full Page seperti WordPress tapi nuansa Gaming */
         .wrapper {
             max-width: 850px;
-            margin: 40px auto;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #2d2d33;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-
-        h1.post-title {
-            font-size: 36px;
+        .site-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--yellow);
+            margin-bottom: 60px;
+        }
+        h1.main-title {
+            font-size: 48px;
+            font-weight: 800;
             text-align: center;
-            color: var(--accent-yellow);
             margin-bottom: 10px;
+            color: #ffffff;
         }
-
-        .subscriber-tag {
+        .sub-tag {
             text-align: center;
             font-weight: bold;
-            color: #22c55e;
-            font-size: 14px;
-            letter-spacing: 1px;
-            margin-bottom: 40px;
+            color: var(--yellow);
+            margin-bottom: 50px;
+            display: block;
         }
-
-        /* Styling List Download */
-        .download-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .download-list li {
-            background: #1d1d24;
-            margin-bottom: 12px;
-            padding: 15px 20px;
+        .download-item {
+            background: var(--card);
+            margin-bottom: 15px;
+            padding: 15px 25px;
             border-radius: 8px;
+            border-left: 4px solid var(--yellow);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-left: 3px solid var(--accent-yellow);
-            transition: 0.3s;
         }
-
-        .download-list li:hover {
-            transform: scale(1.02);
-            background: #24242d;
-        }
-
-        .download-list a {
-            background: var(--accent-yellow);
+        .download-item a {
+            background: var(--yellow);
             color: #000;
-            padding: 6px 15px;
-            border-radius: 4px;
+            padding: 8px 20px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 13px;
             text-transform: uppercase;
         }
-
         .divider {
             border: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #333, transparent);
+            border-top: 1px solid #333;
             margin: 40px 0;
         }
-
-        .info-box {
+        .info-section {
             background: rgba(255, 204, 0, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px dashed var(--accent-yellow);
-            color: var(--text-dim);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px dashed #444;
         }
-
         .section-title {
-            color: var(--accent-yellow);
+            color: var(--yellow);
             font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: 20px;
+            text-decoration: underline;
+            margin-top: 40px;
             display: block;
         }
-
-        .video-link {
-            color: var(--accent-yellow);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
+        .link-yellow { color: var(--yellow); text-decoration: none; font-weight: bold; }
         footer {
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 12px;
-            color: #555;
+            margin-top: 80px;
+            padding: 30px 0;
+            border-top: 1px solid #222;
+            font-size: 13px;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-<div class="top-bar"></div>
-
-<header>
-    <div class="site-title">DICKY <span>NEWS</span></div>
-</header>
-
 <div class="wrapper">
-    <h1 class="post-title">Dicky News Official</h1>
-    <div class="subscriber-tag">400K SUBSCRIBERS COMMUNITY</div>
+    <div class="site-name">Dicky News</div>
 
-    <ul class="download-list">
-        <li><span>GB W4 Pro (V25.75)</span> <a href="#">DOWNLOAD</a></li>
-        <li><span>MB W4 (V2.6.0)</span> <a href="#">DOWNLOAD</a></li>
-        <li><span>RC W4 (V10.60)</span> <a href="#">DOWNLOAD</a></li>
-        <li><span>Delta W4 (V3.4.2)</span> <a href="#">DOWNLOAD</a></li>
-        <li><span>Lite X W4 (V2.70.1)</span> <a href="#">DOWNLOAD</a></li>
-    </ul>
+    <h1 class="main-title">Dicky News Official</h1>
+    <span class="sub-tag">Dicky News : 400K SUBSCRIBERS</span>
 
-    <div class="divider"></div>
-
-    <div class="info-box">
-        <p>⚡ Tidak Perlu Aktivator.</p>
-        <p>⚡ Ekstrak File Agar Jadi Apk Menggunakan <b>Zarchiver</b>.</p>
-        <p>⚡ Skip Jika Sudah Punya Versi Yang Sama.</p>
+    <div class="download-item">
+        <span>GB W4 Pro V25.75</span>
+        <a href="#">DOWNLOAD</a>
+    </div>
+    <div class="download-item">
+        <span>MB W4 V2.6.0</span>
+        <a href="#">DOWNLOAD</a>
+    </div>
+    <div class="download-item">
+        <span>RC W4 V10.60</span>
+        <a href="#">DOWNLOAD</a>
     </div>
 
-    <div class="divider"></div>
+    <hr class="divider">
 
-    <span class="section-title">VIDEO TUTORIAL :</span>
-    <p>> <a href="https://youtu.be/bGQPvEVCmfo" class="video-link">youtu.be/bGQPvEVCmfo</a></p>
+    <div class="info-section">
+        <p>> Tidak Perlu Aktivator.</p>
+        <p>> Ekstrak File Agar Jadi Apk Menggunakan <a href="#" class="link-yellow">Zarchiver</a>.</p>
+        <p>> Skip Jika Sudah Punya Versi Yang Sama.</p>
+    </div>
 
-    <div class="divider"></div>
+    <hr class="divider">
+
+    <span class="section-title">Video Cara Download & Install :</span>
+    <p>> <a href="https://youtu.be/bGQPvEVCmfo" class="link-yellow">youtu.be/bGQPvEVCmfo</a></p>
+
+    <hr class="divider">
+
+    <span class="section-title">Tata Cara Instal :</span>
+    <p>✅ Matikan Play Protect di Play Store</p>
+    <p>✅ Wajib Punya WA ORI</p>
+    <p>✅ Tautkan WA GB ke WA ORI</p>
+
+    <span class="section-title">Penting :</span>
+    <p>📌 Pemasangan Paling Aman Adalah Lewat Tautan Perangkat, Tautkan WA GB Ke WA ORI.</p>
+    <p>📌 Jika Kalian Login Nomor Langsung di WA GB, Resiko Banned Silahkan Tanggung Sendiri.</p>
+
+    <hr class="divider">
 
     <span class="section-title">WA MOD ENHANCER (ROOT) :</span>
     <p>✅ Atasi Memerlukan WA Resmi</p>
     <p>✅ 100% Permanen Bisa Login Nomor</p>
     <p>✅ Paling Stabil Tanpa Delay</p>
-    
-    <p style="margin-top:20px;">LINK : <a href="https://youtu.be/Ki8uA7weZFA" class="video-link">Klik Disini</a></p>
-</div>
 
-<footer>
-    &copy; 2026 Dicky News Official. Optimized for Mobile & Desktop.
-</footer>
+    <p style="margin-top:20px;">LINK VIDEO: <a href="https://youtu.be/Ki8uA7weZFA" class="link-yellow">Klik Disini</a></p>
+
+    <footer>
+        Privasi & Cookie: Situs ini menggunakan cookie. Dengan melanjutkan menggunakan situs web ini, Anda setuju dengan penggunaan mereka.
+    </footer>
+</div>
 
 </body>
 </html>
