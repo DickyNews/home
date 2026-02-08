@@ -8,185 +8,231 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         :root {
-            --bg: #0a0a0b;
-            --card: #151518;
+            --bg: #050505;
+            --card: #121214;
             --yellow: #ffcc00;
-            --yellow-glow: rgba(255, 204, 0, 0.3);
+            --yellow-glow: rgba(255, 204, 0, 0.4);
             --text: #e2e8f0;
             --accent: #1e1e22;
         }
 
-        * { box-sizing: border-box; scroll-behavior: smooth; }
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
-            line-height: 1.8;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
+        /* Animated Background */
         .bg-glow {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% -10%, #221e00 0%, transparent 60%);
+            background: radial-gradient(circle at 50% -20%, #332b00 0%, transparent 50%);
             z-index: -1;
         }
 
         .wrapper {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
-        header { text-align: center; margin-bottom: 40px; }
-        
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
         h1 {
-            font-size: clamp(36px, 10vw, 52px);
-            font-weight: 800;
-            margin-bottom: 5px;
-            color: #ffffff;
-            letter-spacing: -1px;
+            font-size: clamp(40px, 8vw, 64px);
+            font-weight: 900;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff, var(--yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
         }
 
         .sub-tag {
-            font-weight: bold;
-            color: var(--yellow);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
             font-size: 14px;
+            font-weight: 700;
+            color: var(--yellow);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 10px;
         }
 
-        /* Modern Visitor Counter */
+        /* Visitor Counter */
         .counter-container {
             display: flex;
             justify-content: center;
-            margin: 40px 0;
+            margin-bottom: 60px;
         }
 
         .modern-badge {
-            background: #111;
-            padding: 10px 25px;
-            border-radius: 50px;
-            border: 2px solid var(--yellow);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 12px 30px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
             display: flex;
             align-items: center;
             gap: 15px;
-            box-shadow: 0 0 20px var(--yellow-glow);
+            transition: 0.4s;
         }
 
-        .label { font-size: 13px; font-weight: 800; color: var(--yellow); }
-        .count-value { font-family: 'Courier New', monospace; font-size: 24px; font-weight: bold; color: #fff; }
+        .modern-badge:hover {
+            border-color: var(--yellow);
+            box-shadow: 0 0 25px var(--yellow-glow);
+        }
 
-        /* Download Boxes */
+        .count-value {
+            font-family: 'Monaco', monospace;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Download Section */
+        .download-list {
+            display: grid;
+            gap: 15px;
+        }
+
         .download-box {
             background: var(--card);
-            margin-bottom: 15px;
-            padding: 20px 30px;
-            border-radius: 12px;
-            border-left: 5px solid var(--yellow);
+            padding: 20px 25px;
+            border-radius: 16px;
+            border: 1px solid #222;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .download-box:hover {
-            transform: translateX(10px) scale(1.02);
-            background: #1c1c21;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transform: scale(1.02);
+            background: #1a1a1d;
+            border-color: var(--yellow);
         }
 
-        .download-box a {
+        .download-box span {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .btn-download {
             background: var(--yellow);
             color: #000;
-            padding: 10px 25px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 14px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             transition: 0.3s;
         }
 
-        .download-box a:hover { transform: translateY(-2px); box-shadow: 0 5px 15px var(--yellow-glow); }
-
-        /* Content Sections */
-        .divider {
-            border: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, #333, transparent);
-            margin: 50px 0;
+        .btn-download:hover {
+            box-shadow: 0 5px 15px var(--yellow-glow);
+            transform: translateY(-2px);
         }
 
-        .info-premium {
-            background: rgba(255, 204, 0, 0.03);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px dashed #444;
-            margin: 30px 0;
+        /* Info Panels */
+        .info-card {
+            background: rgba(255, 204, 0, 0.02);
+            border: 1px solid #222;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 40px 0;
         }
 
         .section-title {
             color: var(--yellow);
             font-weight: 800;
             font-size: 20px;
-            text-decoration: underline;
-            margin: 40px 0 20px;
-            display: block;
-            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .yellow-link { color: var(--yellow); text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .yellow-link:hover { opacity: 0.8; text-decoration: underline; }
+        .yellow-link {
+            color: var(--yellow);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--yellow);
+            transition: 0.3s;
+        }
+
+        .yellow-link:hover { border-bottom-style: solid; }
 
         /* Social Media Section */
-        .social-footer {
-            margin-top: 60px;
+        .social-container {
             text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid #222;
+            margin-top: 60px;
+            padding: 40px 0;
         }
 
-        .social-icons {
+        .social-grid {
             display: flex;
             justify-content: center;
-            gap: 15px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            gap: 15px;
+            margin-top: 25px;
         }
 
-        .social-btn {
-            width: 45px;
-            height: 45px;
-            background: #1a1a1d;
-            border: 1px solid #333;
-            border-radius: 10px;
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            border-radius: 12px;
             text-decoration: none;
             font-size: 20px;
             transition: 0.4s;
+            border: 1px solid #333;
         }
 
-        .social-btn:hover {
+        .social-icon:hover {
+            transform: translateY(-10px);
             background: var(--yellow);
             color: #000;
-            transform: translateY(-5px);
             border-color: var(--yellow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         footer {
-            margin-top: 50px;
-            padding: 30px 0;
-            font-size: 13px;
-            color: #555;
+            margin-top: 80px;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: #444;
             text-align: center;
+            border-top: 1px solid #111;
+        }
+
+        .divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #222, transparent);
+            margin: 60px 0;
         }
 
         @media (max-width: 600px) {
-            .download-box { flex-direction: column; gap: 15px; text-align: center; }
+            .download-box { flex-direction: column; text-align: center; gap: 15px; }
+            .btn-download { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -195,88 +241,130 @@
 <div class="bg-glow"></div>
 
 <div class="wrapper">
-    <header data-aos="fade-down">
+    <header data-aos="zoom-out">
         <h1>Dicky News</h1>
-        <span class="sub-tag">Dicky News : 400K SUBSCRIBERS</span>
+        <span class="sub-tag">400K SUBSCRIBERS ENTHUSIAST</span>
     </header>
 
-    <div class="counter-container" data-aos="zoom-in">
+    <div class="counter-container" data-aos="fade-up">
         <div class="modern-badge">
-            <span class="label">TOTAL VISITORS :</span>
-            <span class="count-value" id="count">2.654.844</span>
+            <span style="font-size: 12px; font-weight: 800; color: var(--yellow)">TOTAL VISITORS</span>
+            <span class="count-value" id="count">0</span>
         </div>
     </div>
 
-    <div data-aos="fade-up">
-        <div class="download-box"><span>GB W4 Pro Terbaru</span><a href="#">DOWNLOAD</a></div>
-        <div class="download-box"><span>MB W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
-        <div class="download-box"><span>RC W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
-        <div class="download-box"><span>Delta W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
-        <div class="download-box"><span>Lite X W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
+    <div class="download-list">
+        <div class="download-box" data-aos="fade-right" data-aos-delay="100">
+            <span>GB W4 Pro Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+        <div class="download-box" data-aos="fade-right" data-aos-delay="200">
+            <span>MB W4 Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+        <div class="download-box" data-aos="fade-right" data-aos-delay="300">
+            <span>RC W4 Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+        <div class="download-box" data-aos="fade-right" data-aos-delay="400">
+            <span>Delta W4 Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+        <div class="download-box" data-aos="fade-right" data-aos-delay="500">
+            <span>Lite X W4 Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+    </div>
+
+    <div class="info-card" data-aos="fade-up">
+        <p><i class="fas fa-check-circle" style="color: var(--yellow)"></i> Tidak Perlu Aktivator.</p>
+        <p><i class="fas fa-archive" style="color: var(--yellow)"></i> Ekstrak File menggunakan <a href="#" class="yellow-link">Zarchiver</a>.</p>
+        <p><i class="fas fa-forward" style="color: var(--yellow)"></i> Skip Jika Sudah Punya Versi Yang Sama.</p>
+    </div>
+
+    <div class="section-title" data-aos="fade-left"><i class="fab fa-youtube"></i> Tutorial Instalasi</div>
+    <div class="download-box" data-aos="zoom-in" style="background: #1a1a1d;">
+        <span>Video Cara Download & Install</span>
+        <a href="https://youtu.be/bGQPvEVCmfo" class="btn-download" style="background: #ff0000; color: #fff;"><i class="fab fa-youtube"></i> TONTON</a>
     </div>
 
     <hr class="divider">
 
-    <div class="info-premium" data-aos="fade-up">
-        <p>> Tidak Perlu Aktivator.</p>
-        <p>> Ekstrak File Agar Jadi Apk Menggunakan <a href="#" class="yellow-link">Zarchiver</a>.</p>
-        <p>> Skip Jika Sudah Punya Versi Yang Sama.</p>
-    </div>
-
-    <span class="section-title" data-aos="fade-right">Video Cara Download & Install :</span>
-    <p data-aos="fade-up">> <a href="https://youtu.be/bGQPvEVCmfo" class="yellow-link">youtu.be/bGQPvEVCmfo</a></p>
-
-    <hr class="divider">
-
-    <div data-aos="fade-up">
-        <span class="section-title">Tata Cara Instal :</span>
-        <p>✅ Matikan Play Protect di Play Store</p>
-        <p>✅ Wajib Punya W4 ORI</p>
-        <p>✅ Tautkan WA GB ke W4 ORI</p>
-    </div>
-
-    <div data-aos="fade-up">
-        <span class="section-title">Penting :</span>
-        <p>📌 Pemasangan Paling Aman Adalah Lewat Tautan Perangkat, Tautkan W4 GB Ke W4 ORI.</p>
-        <p>📌 Jika Kalian Login Nomor Langsung di W4 GB, Resiko Banned Silahkan Tanggung Sendiri.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="mobile-stack">
+        <div data-aos="fade-up">
+            <span class="section-title">Tata Cara :</span>
+            <p><i class="fas fa-shield-alt"></i> Matikan Play Protect</p>
+            <p><i class="fas fa-check"></i> Wajib Punya W4 ORI</p>
+            <p><i class="fas fa-link"></i> Tautkan WA GB ke W4 ORI</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+            <span class="section-title">Penting :</span>
+            <p>⚠️ Paling Aman Lewat Tautan Perangkat.</p>
+            <p>⚠️ Login Nomor Langsung = Resiko Banned.</p>
+        </div>
     </div>
 
     <hr class="divider">
 
-    <div class="info-premium" data-aos="flip-up" style="border-color: #ff4444;">
-        <span class="section-title" style="margin-top: 0; color: #ff4444;">WA MOD ENHANCER (ROOT) :</span>
-        <p>✅ Atasi Memerlukan W4 Resmi | 100% Permanen Bisa Login Nomor</p>
-        <p>> <a href="https://youtu.be/Ki8uA7weZFA" class="yellow-link">LINK W4 ENHANCER</a></p>
+    <div class="info-card" data-aos="flip-up" style="border-left: 4px solid #ff0000;">
+        <span class="section-title" style="color: #ff4444;"><i class="fas fa-bolt"></i> WA MOD ENHANCER (ROOT)</span>
+        <p>Atasi Memerlukan W4 Resmi | 100% Permanen Bisa Login Nomor</p>
+        <a href="https://youtu.be/Ki8uA7weZFA" class="yellow-link">KLIK DISINI UNTUK DETAIL</a>
     </div>
 
-    <div class="social-footer" data-aos="fade-up">
-        <span class="sub-tag">Follow Media Sosial Kami</span>
-        <div class="social-icons">
-            <a href="https://youtube.com/@dickynews" class="social-btn" title="YouTube Utama"><i class="fab fa-youtube"></i></a>
-            <a href="https://youtube.com/@dickynewsofficial" class="social-btn" title="YouTube Kedua"><i class="fab fa-play-circle"></i></a>
-            <a href="https://www.instagram.com/dickynews" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@dickynewsyt_" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/dickynews45" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <div class="social-container" data-aos="fade-up">
+        <span class="section-title" style="justify-content: center;">CONNECT WITH ME</span>
+        <div class="social-grid">
+            <a href="https://youtube.com/@dickynews" class="social-icon" title="YouTube Utama"><i class="fab fa-youtube"></i></a>
+            <a href="https://youtube.com/@dickynewsofficial" class="social-icon" title="YouTube Kedua"><i class="fab fa-youtube-square"></i></a>
+            <a href="https://www.instagram.com/dickynews" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@dickynewsyt_" class="social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/dickynews45" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
     </div>
 
     <footer>
-        Privasi & Cookie: Situs ini menggunakan cookie. Dengan melanjutkan menggunakan situs web ini, Anda setuju dengan penggunaan mereka.
-        <br><br>
-        &copy; 2024 Dicky News Official
+        <p>&copy; 2024 Dicky News Official. All Rights Reserved.</p>
+        <p>Privasi & Cookie: Situs ini menggunakan cookie untuk meningkatkan pengalaman pengguna.</p>
     </footer>
 </div>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 800, once: true });
+    // Initialize Animations
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-back',
+        once: true
+    });
 
-    // Sistem Counter Asli
+    // Counter System
     let baseCount = 2654844;
     let visits = localStorage.getItem('site_visits_new');
-    if (visits === null) { visits = 1; } else { visits = parseInt(visits) + 1; }
+    
+    if (visits === null) {
+        visits = 1;
+    } else {
+        visits = parseInt(visits) + 1;
+    }
+    
     localStorage.setItem('site_visits_new', visits);
-    document.getElementById('count').innerText = (baseCount + visits).toLocaleString('id-ID');
+    
+    // Animate Counter Number
+    const target = baseCount + visits;
+    const countEl = document.getElementById('count');
+    let current = target - 100; // Start slightly below for effect
+    
+    const updateCount = () => {
+        if(current < target) {
+            current += 1;
+            countEl.innerText = current.toLocaleString('id-ID');
+            setTimeout(updateCount, 10);
+        } else {
+            countEl.innerText = target.toLocaleString('id-ID');
+        }
+    };
+    updateCount();
 </script>
 
 </body>
