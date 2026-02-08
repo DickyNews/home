@@ -10,170 +10,118 @@
             --card: #151518;
             --yellow: #ffcc00;
             --text: #e2e8f0;
-            --dim-text: #94a3b8;
         }
-
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            line-height: 1.8;
         }
-
         .wrapper {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
         h1 {
-            font-size: 36px;
+            font-size: 52px;
             font-weight: 800;
-            margin: 0 0 10px 0;
+            text-align: center;
+            margin-bottom: 10px;
             color: #ffffff;
-            letter-spacing: -0.5px;
         }
-
         .sub-tag {
-            font-size: 14px;
-            font-weight: 700;
+            text-align: center;
+            font-weight: bold;
             color: var(--yellow);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            margin-bottom: 30px;
+            display: block;
         }
 
-        /* Visitor Counter Badge */
+        /* Modern & Clean Visitor Counter */
         .counter-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
+            text-align: center;
+            margin-bottom: 50px;
         }
-
         .modern-badge {
             display: inline-flex;
             align-items: center;
-            background: rgba(255, 204, 0, 0.05);
-            padding: 10px 25px;
+            background: #111;
+            padding: 8px 25px;
             border-radius: 50px;
             border: 2px solid var(--yellow);
-            box-shadow: 0 0 20px rgba(255, 204, 0, 0.15);
-            gap: 12px;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+            gap: 15px;
         }
-
         .label {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 800;
             color: var(--yellow);
-            text-transform: uppercase;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
-
         .count-value {
-            font-family: 'Consolas', monospace;
-            font-size: 22px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
             font-weight: bold;
             color: #ffffff;
-            text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
         }
 
-        /* Download Section */
+        /* Daftar Download */
         .download-box {
             background: var(--card);
-            margin-bottom: 12px;
-            padding: 18px 24px;
-            border-radius: 12px;
+            margin-bottom: 15px;
+            padding: 20px 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--yellow);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
-
-        .download-box:hover {
-            border-color: var(--yellow);
-            transform: translateX(8px);
-        }
-
-        .download-box span {
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .btn-download {
+        .download-box:hover { transform: translateX(10px); background: #1c1c21; }
+        .download-box a {
             background: var(--yellow);
             color: #000;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 10px 25px;
+            border-radius: 6px;
             text-decoration: none;
-            font-size: 13px;
             font-weight: 800;
             text-transform: uppercase;
         }
-
-        /* Content Structure */
         .divider {
             border: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, #333, transparent);
-            margin: 45px 0;
+            margin: 50px 0;
         }
-
-        .info-card {
-            background: rgba(255, 204, 0, 0.02);
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px dashed rgba(255, 204, 0, 0.2);
-        }
-
         .section-title {
-            display: block;
             color: var(--yellow);
-            font-size: 18px;
             font-weight: 800;
-            margin: 35px 0 15px 0;
-            text-transform: uppercase;
+            font-size: 22px;
             text-decoration: underline;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            display: block;
+            text-transform: uppercase;
         }
-
-        p {
-            font-size: 15px;
-            color: var(--text);
-            margin: 10px 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .yellow-link {
-            color: var(--yellow);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
+        .yellow-link { color: var(--yellow); text-decoration: none; font-weight: bold; }
         footer {
             margin-top: 100px;
             padding: 40px 0;
-            font-size: 13px;
+            border-top: 1px solid #222;
+            font-size: 14px;
             color: #555;
             text-align: center;
-            border-top: 1px solid #222;
         }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
-    <header>
-        <h1>Dicky News Official</h1>
-        <span class="sub-tag">Dicky News : 400K SUBSCRIBERS</span>
-    </header>
+    <h1>Dicky News Official</h1>
+    <span class="sub-tag">Dicky News : 400K SUBSCRIBERS</span>
 
     <div class="counter-container">
         <div class="modern-badge">
@@ -182,55 +130,39 @@
         </div>
     </div>
 
-    <div class="download-box">
-        <span>GB W4 Pro V25.75</span>
-        <a href="LINK_GENERATOR_SINI" class="btn-download">Download</a>
-    </div>
-    <div class="download-box">
-        <span>MB W4 V2.6.0</span>
-        <a href="LINK_GENERATOR_SINI" class="btn-download">Download</a>
-    </div>
-    <div class="download-box">
-        <span>RC W4 V10.60</span>
-        <a href="LINK_GENERATOR_SINI" class="btn-download">Download</a>
-    </div>
-    <div class="download-box">
-        <span>Delta W4 V3.4.2</span>
-        <a href="LINK_GENERATOR_SINI" class="btn-download">Download</a>
-    </div>
-    <div class="download-box">
-        <span>Lite X W4 V2.70.1</span>
-        <a href="LINK_GENERATOR_SINI" class="btn-download">Download</a>
-    </div>
+    <div class="download-box"><span>GB W4 Pro Terbaru</span><a href="#">DOWNLOAD</a></div>
+    <div class="download-box"><span>MB W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
+    <div class="download-box"><span>RC W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
+    <div class="download-box"><span>Delta W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
+    <div class="download-box"><span>Lite X W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
 
-    <div class="divider"></div>
+    <hr class="divider">
 
-    <div class="info-card">
-        <p><span>👉</span> Tidak Perlu Aktivator.</p>
-        <p><span>👉</span> Ekstrak File Agar Jadi Apk Menggunakan <a href="#" class="yellow-link">Zarchiver</a>.</p>
-        <p><span>👉</span> Skip Jika Sudah Punya Versi Yang Sama.</p>
+    <div class="info-premium" style="background: rgba(255, 204, 0, 0.03); padding: 30px; border-radius: 12px; border: 1px dashed #333;">
+        <p>> Tidak Perlu Aktivator.</p>
+        <p>> Ekstrak File Agar Jadi Apk Menggunakan <a href="#" class="yellow-link">Zarchiver</a>.</p>
+        <p>> Skip Jika Sudah Punya Versi Yang Sama.</p>
     </div>
 
     <span class="section-title">Video Cara Download & Install :</span>
-    <p><span>🔗</span> <a href="https://youtu.be/bGQPvEVCmfo" class="yellow-link">youtu.be/bGQPvEVCmfo</a></p>
+    <p>> <a href="https://youtu.be/bGQPvEVCmfo" class="yellow-link">youtu.be/bGQPvEVCmfo</a></p>
 
-    <div class="divider"></div>
+    <hr class="divider">
 
     <span class="section-title">Tata Cara Instal :</span>
-    <p><span>✅</span> Matikan Play Protect di Play Store</p>
-    <p><span>✅</span> Wajib Punya WA ORI</p>
-    <p><span>✅</span> Tautkan WA GB ke WA ORI</p>
+    <p>✅ Matikan Play Protect di Play Store</p>
+    <p>✅ Wajib Punya W4 ORI</p>
+    <p>✅ Tautkan WA GB ke W4 ORI</p>
 
     <span class="section-title">Penting :</span>
-    <p><span>📌</span> Pemasangan Paling Aman Adalah Lewat Tautan Perangkat, Tautkan WA GB Ke WA ORI.</p>
-    <p><span>📌</span> Jika Kalian Login Nomor Langsung di WA GB, Resiko Banned Silahkan Tanggung Sendiri.</p>
+    <p>📌 Pemasangan Paling Aman Adalah Lewat Tautan Perangkat, Tautkan W4 GB Ke W4 ORI.</p>
+    <p>📌 Jika Kalian Login Nomor Langsung di W4 GB, Resiko Banned Silahkan Tanggung Sendiri.</p>
 
-    <div class="divider"></div>
+    <hr class="divider">
 
     <span class="section-title">WA MOD ENHANCER (ROOT) :</span>
-    <p><span>✅</span> Atasi Memerlukan WA Resmi | 100% Permanen Bisa Login Nomor</p>
-    <p><span>✅</span> Paling Stabil Tanpa Delay | Fitur Sangat Lengkap</p>
-    <p><span>🔗</span> <a href="https://youtu.be/Ki8uA7weZFA" class="yellow-link">LINK WA ENHANCER</a></p>
+    <p>✅ Atasi Memerlukan W4 Resmi | 100% Permanen Bisa Login Nomor</p>
+    <p>> <a href="https://youtu.be/Ki8uA7weZFA" class="yellow-link">LINK W4 ENHANCER</a></p>
 
     <footer>
         Privasi & Cookie: Situs ini menggunakan cookie. Dengan melanjutkan menggunakan situs web ini, Anda setuju dengan penggunaan mereka.
@@ -240,7 +172,7 @@
 <script>
     // Sistem Counter Pintar: Mulai dari 2.654.844
     let baseCount = 2654844;
-    let visits = localStorage.getItem('site_visits_v4');
+    let visits = localStorage.getItem('site_visits_new');
     
     if (visits === null) {
         visits = 1;
@@ -248,7 +180,8 @@
         visits = parseInt(visits) + 1;
     }
     
-    localStorage.setItem('site_visits_v4', visits);
+    localStorage.setItem('site_visits_new', visits);
+    // Tampilan angka format Indonesia (dengan titik)
     document.getElementById('count').innerText = (baseCount + visits).toLocaleString('id-ID');
 </script>
 
