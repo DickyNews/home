@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dicky News Official</title>
+    
+    <script>
+        const LINK_SETTINGS = {
+            // Link Download Utama
+            gb_w4_pro:  "https://dickynews.github.io/link-generator-final/?ytch=https%3A%2F%2Fyoutube.com%2F%40dickynews&ytch2=https%3A%2F%2Fyoutube.com%2F%40dickynewsofficial&ytvid=https%3A%2F%2Fyoutu.be%2Fpn-l2I36qEE&ig=https%3A%2F%2Fwww.instagram.com%2Fdickynews&tt=https%3A%2F%2Fwww.tiktok.com%2F%40dickynewsyt_&fb=https%3A%2F%2Fwww.facebook.com%2Fdickynews45&custom=https%3A%2F%2Fwww.mediafire.com%2Ffile%2F84tskln3xo93742%2FGBWhatsApp_Pro_v25.80.zip%2Ffile",
+            mb_w4:      "#",
+            rc_w4:      "#",
+            delta_w4:   "#",
+            lite_x_w4:  "#",
+
+            // Tutorial & Lainnya
+            video_tutorial: "https://youtu.be/bGQPvEVCmfo",
+            zarchiver:      "#",
+            wa_root_detail: "https://youtu.be/Ki8uA7weZFA"
+        };
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
@@ -85,7 +101,6 @@
             opacity: 0.8;
         }
 
-        /* Visitor Counter */
         .counter-container {
             display: flex;
             justify-content: center;
@@ -107,7 +122,6 @@
         .count-label { font-size: 14px; font-weight: 800; color: var(--yellow); }
         .count-value { font-family: 'Monaco', monospace; font-size: 16px; color: #fff; }
 
-        /* Download Section */
         .download-list {
             display: grid;
             gap: 20px;
@@ -163,7 +177,6 @@
             box-shadow: 0 0 20px var(--yellow-glow);
         }
 
-        /* Info Card */
         .info-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid #222;
@@ -185,7 +198,6 @@
 
         .yellow-link { color: var(--yellow); text-decoration: none; border-bottom: 1px dashed var(--yellow); }
 
-        /* Social Icons */
         .social-grid {
             display: flex;
             justify-content: center;
@@ -253,36 +265,36 @@
     <div class="download-list">
         <div class="download-box" data-aos="fade-right" data-aos-delay="50">
             <span>GB W4 Pro Terbaru</span>
-            <a href="https://dickynews.github.io/link-generator-final/?ytch=https%3A%2F%2Fyoutube.com%2F%40dickynews&ytch2=https%3A%2F%2Fyoutube.com%2F%40dickynewsofficial&ytvid=https%3A%2F%2Fyoutu.be%2Fpn-l2I36qEE&ig=https%3A%2F%2Fwww.instagram.com%2Fdickynews&tt=https%3A%2F%2Fwww.tiktok.com%2F%40dickynewsyt_&fb=https%3A%2F%2Fwww.facebook.com%2Fdickynews45&custom=https%3A%2F%2Fwww.mediafire.com%2Ffile%2F84tskln3xo93742%2FGBWhatsApp_Pro_v25.80.zip%2Ffile" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+            <a id="link-gb" href="#" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
         <div class="download-box" data-aos="fade-left" data-aos-delay="100">
             <span>MB W4 Terbaru</span>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+            <a id="link-mb" href="#" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
         <div class="download-box" data-aos="fade-right" data-aos-delay="150">
             <span>RC W4 Terbaru</span>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+            <a id="link-rc" href="#" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
         <div class="download-box" data-aos="fade-left" data-aos-delay="200">
             <span>Delta W4 Terbaru</span>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+            <a id="link-delta" href="#" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
         <div class="download-box" data-aos="fade-right" data-aos-delay="250">
             <span>Lite X W4 Terbaru</span>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+            <a id="link-litex" href="#" target="_blank" rel="noopener noreferrer" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
         </div>
     </div>
 
     <div class="info-card" data-aos="flip-up" data-aos-duration="1000">
         <p><i class="fas fa-check-circle" style="color: var(--yellow)"></i> Tidak Perlu Aktivator.</p>
-        <p><i class="fas fa-archive" style="color: var(--yellow)"></i> Ekstrak File menggunakan <a href="#" target="_blank" rel="noopener noreferrer" class="yellow-link">Zarchiver</a>.</p>
+        <p><i class="fas fa-archive" style="color: var(--yellow)"></i> Ekstrak File menggunakan <a id="link-zarchiver" href="#" target="_blank" rel="noopener noreferrer" class="yellow-link">Zarchiver</a>.</p>
         <p><i class="fas fa-forward" style="color: var(--yellow)"></i> Skip Jika Sudah Punya Versi Yang Sama.</p>
     </div>
 
     <div class="section-title" data-aos="fade-up"><i class="fab fa-youtube"></i> Tutorial Instalasi</div>
     <div class="download-box" data-aos="zoom-in-up" style="background: #1a1a1d;">
         <span>Video Cara Download & Install</span>
-        <a href="https://youtu.be/bGQPvEVCmfo" target="_blank" rel="noopener noreferrer" class="btn-download" style="background: #ff0000; color: #fff;"><i class="fab fa-youtube"></i> TONTON</a>
+        <a id="link-tutorial" href="#" target="_blank" rel="noopener noreferrer" class="btn-download" style="background: #ff0000; color: #fff;"><i class="fab fa-youtube"></i> TONTON</a>
     </div>
 
     <hr class="divider">
@@ -304,7 +316,7 @@
     <div class="info-card" data-aos="zoom-out-up" style="border-left: 4px solid #ff0000; margin-top: 60px;">
         <span class="section-title" style="color: #ff4444;"><i class="fas fa-bolt"></i> WA MOD ENHANCER (ROOT)</span>
         <p>Atasi Memerlukan W4 Resmi | 100% Permanen Bisa Login Nomor</p>
-        <a href="https://youtu.be/Ki8uA7weZFA" target="_blank" rel="noopener noreferrer" class="yellow-link">KLIK DISINI UNTUK DETAIL</a>
+        <a id="link-wa-root" href="#" target="_blank" rel="noopener noreferrer" class="yellow-link">KLIK DISINI UNTUK DETAIL</a>
     </div>
 
     <div class="social-container" data-aos="fade-up">
@@ -325,6 +337,18 @@
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
+    // FUNGSI OTOMATISISI LINK (SANGAT MUDAH DIEDIT)
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('link-gb').href = LINK_SETTINGS.gb_w4_pro;
+        document.getElementById('link-mb').href = LINK_SETTINGS.mb_w4;
+        document.getElementById('link-rc').href = LINK_SETTINGS.rc_w4;
+        document.getElementById('link-delta').href = LINK_SETTINGS.delta_w4;
+        document.getElementById('link-litex').href = LINK_SETTINGS.lite_x_w4;
+        document.getElementById('link-tutorial').href = LINK_SETTINGS.video_tutorial;
+        document.getElementById('link-zarchiver').href = LINK_SETTINGS.zarchiver;
+        document.getElementById('link-wa-root').href = LINK_SETTINGS.wa_root_detail;
+    });
+
     AOS.init({
         duration: 800,
         easing: 'ease-out-cubic',
