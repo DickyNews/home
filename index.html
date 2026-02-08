@@ -3,174 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dicky News Official</title>
+    <title>Dicky News Official | Hub Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         :root {
-            --bg: #0a0a0b;
-            --card: #151518;
+            --bg: #050505;
+            --card: #121214;
             --yellow: #ffcc00;
+            --yellow-glow: rgba(255, 204, 0, 0.4);
             --text: #e2e8f0;
+            --accent: #1e1e22;
         }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
-            line-height: 1.8;
-        }
-        .wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        h1 {
-            font-size: 52px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-        .sub-tag {
-            text-align: center;
-            font-weight: bold;
-            color: var(--yellow);
-            margin-bottom: 30px;
-            display: block;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Modern & Clean Visitor Counter */
-        .counter-container {
-            text-align: center;
-            margin-bottom: 50px;
+        /* Animated Background */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, #332b00 0%, transparent 50%);
+            z-index: -1;
         }
+
+        .wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 8vw, 64px);
+            font-weight: 900;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff, var(--yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+
+        .sub-tag {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--yellow);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Visitor Counter */
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
         .modern-badge {
-            display: inline-flex;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 12px 30px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+            display: flex;
             align-items: center;
-            background: #111;
-            padding: 8px 25px;
-            border-radius: 50px;
-            border: 2px solid var(--yellow);
-            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+            gap: 15px;
+            transition: 0.4s;
+        }
+
+        .modern-badge:hover {
+            border-color: var(--yellow);
+            box-shadow: 0 0 25px var(--yellow-glow);
+        }
+
+        .count-value {
+            font-family: 'Monaco', monospace;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Download Section */
+        .download-list {
+            display: grid;
             gap: 15px;
         }
-        .label {
-            font-size: 13px;
-            font-weight: 800;
-            color: var(--yellow);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .count-value {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-        }
 
-        /* Daftar Download */
         .download-box {
             background: var(--card);
-            margin-bottom: 15px;
-            padding: 20px 30px;
-            border-radius: 10px;
-            border-left: 5px solid var(--yellow);
+            padding: 20px 25px;
+            border-radius: 16px;
+            border: 1px solid #222;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .download-box:hover { transform: translateX(10px); background: #1c1c21; }
-        .download-box a {
+
+        .download-box:hover {
+            transform: scale(1.02);
+            background: #1a1a1d;
+            border-color: var(--yellow);
+        }
+
+        .download-box span {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .btn-download {
             background: var(--yellow);
             color: #000;
-            padding: 10px 25px;
-            border-radius: 6px;
+            padding: 10px 20px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 800;
-            text-transform: uppercase;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
         }
-        .divider {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #333, transparent);
-            margin: 50px 0;
+
+        .btn-download:hover {
+            box-shadow: 0 5px 15px var(--yellow-glow);
+            transform: translateY(-2px);
         }
+
+        /* Info Panels */
+        .info-card {
+            background: rgba(255, 204, 0, 0.02);
+            border: 1px solid #222;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
         .section-title {
             color: var(--yellow);
             font-weight: 800;
-            font-size: 22px;
-            text-decoration: underline;
-            margin-top: 50px;
+            font-size: 20px;
             margin-bottom: 20px;
-            display: block;
-            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .yellow-link { color: var(--yellow); text-decoration: none; font-weight: bold; }
-        footer {
-            margin-top: 100px;
-            padding: 40px 0;
-            border-top: 1px solid #222;
-            font-size: 14px;
-            color: #555;
+
+        .yellow-link {
+            color: var(--yellow);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--yellow);
+            transition: 0.3s;
+        }
+
+        .yellow-link:hover { border-bottom-style: solid; }
+
+        /* Social Media Section */
+        .social-container {
             text-align: center;
+            margin-top: 60px;
+            padding: 40px 0;
+        }
+
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: 0.4s;
+            border: 1px solid #333;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-10px);
+            background: var(--yellow);
+            color: #000;
+            border-color: var(--yellow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: #444;
+            text-align: center;
+            border-top: 1px solid #111;
+        }
+
+        .divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #222, transparent);
+            margin: 60px 0;
+        }
+
+        @media (max-width: 600px) {
+            .download-box { flex-direction: column; text-align: center; gap: 15px; }
+            .btn-download { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <h1>Dicky News</h1>
-    <span class="sub-tag">Dicky News : 400K SUBSCRIBERS</span>
+<div class="bg-glow"></div>
 
-    <div class="counter-container">
+<div class="wrapper">
+    <header data-aos="zoom-out">
+        <h1>Dicky News</h1>
+        <span class="sub-tag">400K SUBSCRIBERS ENTHUSIAST</span>
+    </header>
+
+    <div class="counter-container" data-aos="fade-up">
         <div class="modern-badge">
-            <span class="label">TOTAL VISITORS :</span>
-            <span class="count-value" id="count">2.654.844</span>
+            <span style="font-size: 12px; font-weight: 800; color: var(--yellow)">TOTAL VISITORS</span>
+            <span class="count-value" id="count">0</span>
         </div>
     </div>
 
-    <div class="download-box"><span>GB W4 Pro Terbaru</span><a href="#">DOWNLOAD</a></div>
-    <div class="download-box"><span>MB W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
-    <div class="download-box"><span>RC W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
-    <div class="download-box"><span>Delta W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
-    <div class="download-box"><span>Lite X W4 Terbaru</span><a href="#">DOWNLOAD</a></div>
-
-    <hr class="divider">
-
-    <div class="info-premium" style="background: rgba(255, 204, 0, 0.03); padding: 30px; border-radius: 12px; border: 1px dashed #333;">
-        <p>> Tidak Perlu Aktivator.</p>
-        <p>> Ekstrak File Agar Jadi Apk Menggunakan <a href="#" class="yellow-link">Zarchiver</a>.</p>
-        <p>> Skip Jika Sudah Punya Versi Yang Sama.</p>
+    <div class="download-list">
+        <div class="download-box" data-aos="fade-right" data-aos-delay="100">
+            <span>GB W4 Pro Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+        <div class="download-box" data-aos="fade-right" data-aos-delay="200">
+            <span>MB W4 Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+        <div class="download-box" data-aos="fade-right" data-aos-delay="300">
+            <span>RC W4 Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+        <div class="download-box" data-aos="fade-right" data-aos-delay="400">
+            <span>Delta W4 Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
+        <div class="download-box" data-aos="fade-right" data-aos-delay="500">
+            <span>Lite X W4 Terbaru</span>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> DOWNLOAD</a>
+        </div>
     </div>
 
-    <span class="section-title">Video Cara Download & Install :</span>
-    <p>> <a href="https://youtu.be/bGQPvEVCmfo" class="yellow-link">youtu.be/bGQPvEVCmfo</a></p>
+    <div class="info-card" data-aos="fade-up">
+        <p><i class="fas fa-check-circle" style="color: var(--yellow)"></i> Tidak Perlu Aktivator.</p>
+        <p><i class="fas fa-archive" style="color: var(--yellow)"></i> Ekstrak File menggunakan <a href="#" class="yellow-link">Zarchiver</a>.</p>
+        <p><i class="fas fa-forward" style="color: var(--yellow)"></i> Skip Jika Sudah Punya Versi Yang Sama.</p>
+    </div>
+
+    <div class="section-title" data-aos="fade-left"><i class="fab fa-youtube"></i> Tutorial Instalasi</div>
+    <div class="download-box" data-aos="zoom-in" style="background: #1a1a1d;">
+        <span>Video Cara Download & Install</span>
+        <a href="https://youtu.be/bGQPvEVCmfo" class="btn-download" style="background: #ff0000; color: #fff;"><i class="fab fa-youtube"></i> TONTON</a>
+    </div>
 
     <hr class="divider">
 
-    <span class="section-title">Tata Cara Instal :</span>
-    <p>✅ Matikan Play Protect di Play Store</p>
-    <p>✅ Wajib Punya W4 ORI</p>
-    <p>✅ Tautkan WA GB ke W4 ORI</p>
-
-    <span class="section-title">Penting :</span>
-    <p>📌 Pemasangan Paling Aman Adalah Lewat Tautan Perangkat, Tautkan W4 GB Ke W4 ORI.</p>
-    <p>📌 Jika Kalian Login Nomor Langsung di W4 GB, Resiko Banned Silahkan Tanggung Sendiri.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="mobile-stack">
+        <div data-aos="fade-up">
+            <span class="section-title">Tata Cara :</span>
+            <p><i class="fas fa-shield-alt"></i> Matikan Play Protect</p>
+            <p><i class="fas fa-check"></i> Wajib Punya W4 ORI</p>
+            <p><i class="fas fa-link"></i> Tautkan WA GB ke W4 ORI</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+            <span class="section-title">Penting :</span>
+            <p>⚠️ Paling Aman Lewat Tautan Perangkat.</p>
+            <p>⚠️ Login Nomor Langsung = Resiko Banned.</p>
+        </div>
+    </div>
 
     <hr class="divider">
 
-    <span class="section-title">WA MOD ENHANCER (ROOT) :</span>
-    <p>✅ Atasi Memerlukan W4 Resmi | 100% Permanen Bisa Login Nomor</p>
-    <p>> <a href="https://youtu.be/Ki8uA7weZFA" class="yellow-link">LINK W4 ENHANCER</a></p>
+    <div class="info-card" data-aos="flip-up" style="border-left: 4px solid #ff0000;">
+        <span class="section-title" style="color: #ff4444;"><i class="fas fa-bolt"></i> WA MOD ENHANCER (ROOT)</span>
+        <p>Atasi Memerlukan W4 Resmi | 100% Permanen Bisa Login Nomor</p>
+        <a href="https://youtu.be/Ki8uA7weZFA" class="yellow-link">KLIK DISINI UNTUK DETAIL</a>
+    </div>
+
+    <div class="social-container" data-aos="fade-up">
+        <span class="section-title" style="justify-content: center;">CONNECT WITH ME</span>
+        <div class="social-grid">
+            <a href="https://youtube.com/@dickynews" class="social-icon" title="YouTube Utama"><i class="fab fa-youtube"></i></a>
+            <a href="https://youtube.com/@dickynewsofficial" class="social-icon" title="YouTube Kedua"><i class="fab fa-youtube-square"></i></a>
+            <a href="https://www.instagram.com/dickynews" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@dickynewsyt_" class="social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/dickynews45" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
 
     <footer>
-        Privasi & Cookie: Situs ini menggunakan cookie. Dengan melanjutkan menggunakan situs web ini, Anda setuju dengan penggunaan mereka.
+        <p>&copy; 2024 Dicky News Official. All Rights Reserved.</p>
+        <p>Privasi & Cookie: Situs ini menggunakan cookie untuk meningkatkan pengalaman pengguna.</p>
     </footer>
 </div>
 
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    // Sistem Counter Pintar: Mulai dari 2.654.844
+    // Initialize Animations
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-back',
+        once: true
+    });
+
+    // Counter System
     let baseCount = 2654844;
     let visits = localStorage.getItem('site_visits_new');
     
@@ -181,8 +349,22 @@
     }
     
     localStorage.setItem('site_visits_new', visits);
-    // Tampilan angka format Indonesia (dengan titik)
-    document.getElementById('count').innerText = (baseCount + visits).toLocaleString('id-ID');
+    
+    // Animate Counter Number
+    const target = baseCount + visits;
+    const countEl = document.getElementById('count');
+    let current = target - 100; // Start slightly below for effect
+    
+    const updateCount = () => {
+        if(current < target) {
+            current += 1;
+            countEl.innerText = current.toLocaleString('id-ID');
+            setTimeout(updateCount, 10);
+        } else {
+            countEl.innerText = target.toLocaleString('id-ID');
+        }
+    };
+    updateCount();
 </script>
 
 </body>
