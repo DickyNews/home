@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dicky News Official | Premium Gaming Portal</title>
+    <title>Dicky News Official</title>
     <style>
         :root {
             --bg: #0a0a0b;
@@ -44,27 +44,31 @@
             color: var(--yellow);
             margin-bottom: 20px;
             display: block;
-            letter-spacing: 1px;
         }
-        /* Style Visitor Counter Pasti Muncul */
+        /* Sempurnakan Tampilan Visitor */
         .visitor-counter {
             text-align: center;
             margin-bottom: 50px;
         }
-        .counter-frame {
-            display: inline-block;
-            padding: 10px;
+        .counter-layout {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 25px;
             background: #111;
             border: 2px solid var(--yellow);
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
         }
-        .visitor-label {
-            font-size: 11px;
+        .total-text {
             color: var(--yellow);
-            font-weight: bold;
-            margin-top: 8px;
+            font-weight: 800;
+            font-size: 14px;
             text-transform: uppercase;
+        }
+        .counter-img {
+            height: 28px;
+            filter: drop-shadow(0 0 5px var(--yellow));
         }
         /* Daftar Download */
         .download-box {
@@ -131,10 +135,10 @@
     <span class="sub-tag">Dicky News : 400K SUBSCRIBERS</span>
 
     <div class="visitor-counter">
-        <div class="counter-frame">
-            <a href="https://info.flagcounter.com/8m5s"><img src="https://s11.flagcounter.com/count2/8m5s/bg_111111/txt_FFCC00/border_111111/columns_3/maxflags_12/viewers_156254/labels_1/pageviews_1/flags_0/percent_0/" alt="Visitor Counter" border="0"></a>
+        <div class="counter-layout">
+            <span class="total-text">TOTAL VISITORS :</span>
+            <img class="counter-img" src="https://counter.secrethit.com/get/@dickynews_final?theme=odometer&next=156254" alt="Counter">
         </div>
-        <div class="visitor-label">LIVE TOTAL VISITORS</div>
     </div>
 
     <div class="download-box">
